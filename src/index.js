@@ -2,10 +2,6 @@ import { onPageLoad } from "./pageLoad.js";
 import { loadMenu } from "./menu.js";
 import { loadContact } from "./contact.js";
 
-onPageLoad();
-loadMenu();
-loadContact();
-
 const mainContainer = document.getElementById('content');
 const navBtns = document.querySelectorAll('button');
 
@@ -16,7 +12,15 @@ navBtns.forEach(btn => {
         if (e.target.value == 'home') {
             onPageLoad();
         }
+        else if (e.target.value == 'menu') {
+            loadMenu();
+        }
+        else {
+            loadContact();
+        }
     })
 });
+
+onPageLoad();
 
 console.log("test");
